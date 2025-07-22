@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Globe Whispers - frontend
+
+This is the version 1 of my personal blog Globe Whispers made with Next.js
 
 ## Getting Started
 
@@ -19,6 +21,41 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Dependencies
+
+**Main dependencies:**
+- `@hookform/resolvers`
+- `clsx`
+- `framer-motion`
+- `next`
+- `next-intl`
+- `next-sitemap`
+- `next-themes`
+- `nodemailer`
+- `react`
+- `react-dom`
+- `react-hook-form`
+- `react-hot-toast`
+- `react-icons`
+- `react-markdown`
+- `react-parallax`
+- `react-scroll`
+- `zod`
+- `zustand`
+
+**Dev dependencies:**
+- `@eslint/eslintrc`
+- `@tailwindcss/postcss`
+- `@testing-library/react`
+- `@types/node`
+- `@types/react`
+- `@types/react-dom`
+- `eslint`
+- `eslint-config-next`
+- `tailwindcss`
+- `typescript`
+- `vitest`
 
 ## Learn More
 
