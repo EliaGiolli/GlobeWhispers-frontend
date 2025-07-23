@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins, Lora } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
+
+import Header from "@/components/Header";
+import SubNavbar from "@/components/Subnavbar";
+import Footer from "@/components/Footer";
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -29,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <body
         className={`${poppins.variable} ${lora.variable} antialiased`}
       >
@@ -38,7 +43,10 @@ export default function RootLayout({
         defaultTheme="system" 
         enableSystem={true}
       >
-        {children}
+        <Header />
+        <SubNavbar />
+        <main>{children}</main>
+        <Footer />
       </ThemeProvider>
       </body>
     </html>
