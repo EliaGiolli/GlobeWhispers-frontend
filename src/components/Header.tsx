@@ -4,12 +4,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
+import { Button } from "./Button";
+
+import { FiLogOut } from "react-icons/fi";
 
 export default function Header() {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     // TODO: implement real logout logic
@@ -17,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full min-h-20 border-b bg-white dark:bg-black">
+    <header className="w-full min-h-20 border-b bg-blue-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center text-center px-4 py-3">
         {/* Logo */}
         <Link href="/">
@@ -34,31 +35,24 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-6 text-xl">
           <Link href="/about">About</Link>
           <Link href="/blog">Blog</Link>
+          <Link href="/services">Servizi</Link>
           <Link href="/contact">Contatti</Link>
         </nav>
 
         {/* Right-side icons */}
         <div className="flex items-center space-x-4">
           <ThemeToggle />
-          <button
+          <Button
             onClick={handleLogout}
-            className="hidden md:inline px-3 py-1 text-sm rounded bg-red-500 text-white hover:bg-red-600 transition"
+            variant="logout"
+            size="md"
           >
-            Logout
-          </button>
+            <FiLogOut size={20} />
+          </Button>
           {/* Hamburger for mobile */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Menu"
-          >
-            ☰
-          </button>
+          <MobileMenu onLogout={handleLogout} />
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && <MobileMenu onLogout={handleLogout} />}
     </header>
   );
 }

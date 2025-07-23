@@ -14,14 +14,16 @@ export default function SubNavbar() {
   };
 
   return (
-    <div className="w-full bg-gray-100 dark:bg-neutral-900 py-2 px-4 text-sm">
+    <div className="w-full bg-blue-100 py-2 px-4 text-sm">
       <div className="max-w-7xl mx-auto flex justify-end">
         <select
-          className="bg-white dark:bg-black border px-2 py-1 rounded"
+          className="bg-white border px-2 py-1 rounded"
           onChange={handleChange}
         >
-          <option value="en">🇬🇧 English</option>
-          <option value="it">🇮🇹 Italiano</option>
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
+          <option value="ru">Russo</option>
+          <option value="es">Spagnolo</option>
         </select>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { FaLinkedin, FaMedium, FaQuora } from "react-icons/fa";
 
 const Footer = () => {
 	return (
-		<footer className="mt-10 border-t border-gray-300 bg-background py-8 text-foreground">
+		<footer className="bg-blue-300 mt-10 border-t border-gray-300 py-8 text-foreground">
 			<div className="container mx-auto flex flex-col items-center justify-between gap-6 px-4 sm:flex-row">
 				{/* Logo & Branding */}
 				<div className="text-lg font-semibold tracking-wide">

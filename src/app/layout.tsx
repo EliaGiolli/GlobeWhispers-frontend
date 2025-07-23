@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins, Lora } from "next/font/google";
-import { ThemeProvider } from 'next-themes'
 
 import Header from "@/components/Header";
 import SubNavbar from "@/components/Subnavbar";
@@ -33,22 +32,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="it" suppressHydrationWarning>
-      <body
-        className={`${poppins.variable} ${lora.variable} antialiased`}
-      >
-      <ThemeProvider 
-        attribute='class' 
-        defaultTheme="system" 
-        enableSystem={true}
-      >
-        <Header />
-        <SubNavbar />
-        <main>{children}</main>
-        <Footer />
-      </ThemeProvider>
-      </body>
-    </html>
-  );
+    try {
+    return (
+      <html lang="it" suppressHydrationWarning>
+        <body className={`${poppins.variable} ${lora.variable} antialiased`}>
+          <Header />
+          <SubNavbar />
+          <main className="bg-stone-200 min-h-screen">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    );
+  } catch (e) {
+    console.error("Errore nel RootLayout:", e);
+    return <div>Errore critico, controlla la console.</div>;
+  }
 }
